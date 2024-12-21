@@ -1,14 +1,12 @@
 # Define an array of folder paths
 folders=(
-    "environments/latex"
-    "environments/rust"
-    "environments/typescript"
-    "environments/typst"
-    "pure"
-    "custom"
+    "latex"
+    "rust"
+    "typescript"
+    "typst"
 )
 
-cd ~/.dotfiles/$HOSTNAME || { echo "Failed to cd into ~/.dotfiles/$HOSTNAME"; exit 1; }
+cd ~/.dotfiles/$HOSTNAME/environments_flakes` || { echo "Failed to cd into ~/.dotfiles/$HOSTNAME/environments_flakes"; exit 1; }
 
 # Loop through each folder path
 for folder in "${folders[@]}"; do
