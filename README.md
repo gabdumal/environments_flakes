@@ -20,7 +20,7 @@ git clone https://github.com/gabdumal/environments_flakes.git environments
 Now, enter the `environments` directory:
 
 ```bash
-cd environments
+cd ~/.dotfiles/nixos/environments
 ```
 
 For each, you need to construct the `flake.lock` file.

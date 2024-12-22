@@ -9,7 +9,7 @@ folders=(
     "typst"
 )
 
-cd ~/.dotfiles/nixos/environments` || { echo "Failed to cd into ~/.dotfiles/nixos/environments"; exit 1; }
+cd ~/.dotfiles/nixos/environments || { echo "Failed to cd into ~/.dotfiles/nixos/environments"; exit 1; }
 
 # Loop through each folder path
 for folder in "${folders[@]}"; do
