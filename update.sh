@@ -6,7 +6,7 @@ folders=(
     "typst"
 )
 
-cd ~/.dotfiles/$HOSTNAME/environments_flakes` || { echo "Failed to cd into ~/.dotfiles/$HOSTNAME/environments_flakes"; exit 1; }
+cd ~/.dotfiles/nixos/environments` || { echo "Failed to cd into ~/.dotfiles/nixos/environments"; exit 1; }
 
 # Loop through each folder path
 for folder in "${folders[@]}"; do

@@ -10,7 +10,13 @@ Follow the same procedure as described in the [README.md](https://github.com/gab
 
 ## Installing
 
-The installation process is the same as described in the [README.md](https://github.com/gabdumal/flakes/blob/main/README.md#installing) file.
+Clone this repository as the `environments` directory in your dotfiles repository.
+
+```bash
+cd ~/.dotfiles
+cd nixos
+git clone https://github.com/gabdumal/environments_flakes.git environments
+```
 
 Now, enter the `environments` directory:
 
@@ -18,17 +24,11 @@ Now, enter the `environments` directory:
 cd environments
 ```
 
-Then, choose the environment you want to install, and enter its directory:
-
-```bash
-cd [environment]
-```
-
 For each, you need to construct the `flake.lock` file.
 You can do that by running the following command:
 
 ```bash
-sudo nix flake update
+./update.sh
 ```
 
 ## Running
@@ -60,7 +60,7 @@ nix develop <flake_path>
 For example, to enter the `typescript` environment, you can use the following command.
 
 ```bash
-nix develop ~/.dotfiles/[username]/environments/typescript
+nix develop ~/.dotfiles/nixos/environments/typescript
 ```
 
 Or, you can use the following helper command instead for the pre-defined environments.\
@@ -93,10 +93,10 @@ If you want to use `nix-direnv` in a project, can create a `.envrc` file in the 
 use flake ./path/to/environment
 ```
 
-If you have followed the suggestions in the [README.md](https://github.com/gabdumal/flakes/blob/main/README.md#installing) file, you can use the following content, replacing `[hostname]` and `[environment]` with the correct values:
+If you have followed the suggestions in the [README.md](https://github.com/gabdumal/flakes/blob/main/README.md#installing) file, you can use the following content, replacing `[environment]` with the correct values:
 
 ```bash
-use flake ~/.dotfiles/[hostname]/environments/[environment]
+use flake ~/.dotfiles/nixos/environments/[environment]
 ```
 
 Then, enable the environment by running, the following command in the root of the project:
