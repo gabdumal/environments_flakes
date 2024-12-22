@@ -13,8 +13,7 @@ Follow the same procedure as described in the [README.md](https://github.com/gab
 Clone this repository as the `environments` directory in your dotfiles repository.
 
 ```bash
-cd ~/.dotfiles
-cd nixos
+cd ~/.dotfiles/nixos
 git clone https://github.com/gabdumal/environments_flakes.git environments
 ```
 
