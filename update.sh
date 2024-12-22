@@ -1,7 +1,9 @@
 # Define an array of folder paths
 folders=(
     "c_cpp"
+    "java"
     "latex"
+    "python"
     "rust"
     "typescript"
     "typst"
