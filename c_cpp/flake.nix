@@ -18,7 +18,25 @@
           { }
           {
             packages = with pkgs; [
-
+              bashInteractive
+              cmake
+              doxygen
+              llvmPackages_latest.clang-tools
+              llvmPackages_latest.bintools
+              llvmPackages_latest.clang
+              llvmPackages_latest.libclc
+              llvmPackages_latest.libcxx
+              llvmPackages_latest.lldb
+              llvmPackages_latest.lldbPlugins.llef
+              llvmPackages.lldb-manpages
+              llvmPackages_latest.llvm
+              llvmPackages_latest.mlir
+              llvmPackages_latest.openmp
+              llvmPackages_latest.stdenv
+              ninja
+              python3
+              vcpkg
+              vcpkg-tool
             ];
           };
       });
