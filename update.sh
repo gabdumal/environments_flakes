@@ -1,24 +1,10 @@
-# Define an array of folder paths
-folders=(
-    "c_cpp"
-    "java"
-    "latex"
-    "python"
-    "rust"
-    "typescript"
-    "typst"
-)
+files=()
+while IFS= read -r file; do
+    files+=("$file")
+done < <(ls ~/.dotfiles/nixos/environments/ | grep -v -e 'README.md' -e 'update.sh')
 
-cd ~/.dotfiles/nixos/environments || { echo "Failed to cd into ~/.dotfiles/nixos/environments"; exit 1; }
-
-# Loop through each folder path
-for folder in "${folders[@]}"; do
-    # Change directory to the folder
-    cd "$folder" || { echo "Failed to cd into $folder"; exit 1; }
-    
-    # Execute the command
+for file in "${files[@]}"; do
+    cd ~/.dotfiles/nixos/environments/$file
     nix flake update
-    
-    # Return to the original directory
-    cd - || exit
+    cd ..
 done
