@@ -12,10 +12,12 @@
   outputs = { self, nixpkgs, rust-overlay, ... }:
     let
       system = "x86_64-linux";
+
       pkgs = import nixpkgs {
         inherit system;
         overlays = [ rust-overlay.overlays.default ];
       };
+
       toolchain = pkgs.rust-bin.fromRustupToolchainFile ./toolchain.toml;
     in
     {

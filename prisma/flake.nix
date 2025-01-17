@@ -1,5 +1,5 @@
 {
-  description = "A Flake for a Typescript development environment";
+  description = "A Flake for a Prisma development environment";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
@@ -26,12 +26,26 @@
       devShells = forEachSupportedSystem ({ pkgs }: {
         default = pkgs.mkShell
           {
+            buildInputs = with pkgs; [
+              openssl
+            ];
+
             packages = with pkgs; [
+              prisma-engines
+              ## Typescript
               nodePackages.nodejs
               nodePackages.pnpm
               nodePackages.typescript
               nodePackages.typescript-language-server
             ];
+
+            env = {
+              LD_LIBRARY_PATH = "${pkgs.openssl}/lib";
+
+              PRISMA_QUERY_ENGINE_LIBRARY = "${pkgs.prisma-engines}/lib/libquery_engine.node";
+              PRISMA_QUERY_ENGINE_BINARY = "${pkgs.prisma-engines}/bin/query-engine";
+              PRISMA_SCHEMA_ENGINE_BINARY = "${pkgs.prisma-engines}/bin/schema-engine";
+            };
           };
       });
     };
