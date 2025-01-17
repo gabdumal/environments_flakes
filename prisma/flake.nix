@@ -26,12 +26,16 @@
       devShells = forEachSupportedSystem ({ pkgs }: {
         default = pkgs.mkShell
           {
+            nativeBuildInputs = with pkgs; [
+              bashInteractive
+            ];
+
             buildInputs = with pkgs; [
               openssl
+              prisma-engines
             ];
 
             packages = with pkgs; [
-              prisma-engines
               ## Typescript
               nodePackages.nodejs
               nodePackages.pnpm
