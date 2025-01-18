@@ -33,6 +33,7 @@
             buildInputs = with pkgs; [
               openssl
               prisma-engines
+              python3
             ];
 
             packages = with pkgs; [

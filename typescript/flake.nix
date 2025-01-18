@@ -26,12 +26,25 @@
       devShells = forEachSupportedSystem ({ pkgs }: {
         default = pkgs.mkShell
           {
+            nativeBuildInputs = with pkgs; [
+              bashInteractive
+            ];
+
+            buildInputs = with pkgs; [
+              openssl
+              python3
+            ];
+
             packages = with pkgs; [
               nodePackages.nodejs
               nodePackages.pnpm
               nodePackages.typescript
               nodePackages.typescript-language-server
             ];
+
+            env = {
+              LD_LIBRARY_PATH = "${pkgs.openssl}/lib";
+            };
           };
       });
     };
