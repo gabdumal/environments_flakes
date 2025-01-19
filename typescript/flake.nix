@@ -31,6 +31,7 @@
             ];
 
             buildInputs = with pkgs; [
+              libuuid
               openssl
               python3
             ];
@@ -43,7 +44,7 @@
             ];
 
             env = {
-              LD_LIBRARY_PATH = "${pkgs.openssl}/lib";
+              LD_LIBRARY_PATH = with pkgs; lib.makeLibraryPath [ libuuid openssl ];
             };
           };
       });

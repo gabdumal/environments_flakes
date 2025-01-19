@@ -31,6 +31,7 @@
             ];
 
             buildInputs = with pkgs; [
+              libuuid
               openssl
               prisma-engines
               python3
@@ -45,7 +46,7 @@
             ];
 
             env = {
-              LD_LIBRARY_PATH = "${pkgs.openssl}/lib";
+              LD_LIBRARY_PATH = with pkgs; lib.makeLibraryPath [ libuuid openssl ];
 
               PRISMA_QUERY_ENGINE_LIBRARY = "${pkgs.prisma-engines}/lib/libquery_engine.node";
               PRISMA_QUERY_ENGINE_BINARY = "${pkgs.prisma-engines}/bin/query-engine";
