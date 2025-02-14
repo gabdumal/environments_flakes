@@ -1,5 +1,5 @@
 {
-  description = "A Flake for a Java development environment";
+  description = "Development environment for Java";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";

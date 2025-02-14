@@ -1,5 +1,5 @@
 {
-  description = "A Flake for a Rust development environment";
+  description = "Development environment for Rust";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";

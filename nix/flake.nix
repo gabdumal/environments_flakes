@@ -1,5 +1,5 @@
 {
-  description = "Development environment for Python";
+  description = "Development environment for Nix";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
@@ -26,18 +26,12 @@
       devShells = forEachSupportedSystem ({ pkgs }: {
         default = pkgs.mkShell
           {
-            packages = with pkgs; [
-              python312
-            ] ++
-            (
-              with pkgs.python312Packages; [
-                pip
-                ruff
-                venvShellHook
-              ]
-            );
 
-            venvDir = ".venv";
+            packages = with pkgs; [
+              nil
+              nixfmt-rfc-style
+            ];
+
           };
       });
     };

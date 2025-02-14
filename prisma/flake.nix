@@ -1,5 +1,5 @@
 {
-  description = "A Flake for a Prisma development environment";
+  description = "Development environment for Prisma with PNPM";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";

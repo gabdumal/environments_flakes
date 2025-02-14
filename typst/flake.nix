@@ -1,5 +1,5 @@
 {
-  description = "A Flake for a Typst development environment";
+  description = "Development environment for Typst";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";

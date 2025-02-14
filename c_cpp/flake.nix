@@ -1,5 +1,5 @@
 {
-  description = "A Flake for a C and C++ development environment";
+  description = "Development environment for C and C++";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";

@@ -1,5 +1,5 @@
 {
-  description = "A Flake for a Typescript development environment";
+  description = "Development environment for PNPM";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";

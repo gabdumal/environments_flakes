@@ -6,21 +6,21 @@ This repository contains my development environments for NixOS.
 
 You need to enable experimental features in your Nix configuration.
 
-Follow the same procedure as described in the [README.md](https://github.com/gabdumal/flakes/blob/main/README.md#setup) file.
+Follow the same procedure as described in the [README.md](https://github.com/gabdumal/nixos/blob/main/README.md#setup) file.
 
 ## Installing
 
 Clone this repository as the `environments` directory in your dotfiles repository.
 
 ```bash
-cd ~/.dotfiles/nixos
+cd ~/dotfiles
 git clone https://github.com/gabdumal/environments_flakes.git environments
 ```
 
 Now, enter the `environments` directory:
 
 ```bash
-cd ~/.dotfiles/nixos/environments
+cd ~/dotfiles/environments
 ```
 
 For each, you need to construct the `flake.lock` file.
@@ -56,14 +56,14 @@ You can also specify a flake where the environment is defined:
 nix develop <flake_path>
 ```
 
-For example, to enter the `typescript` environment, you can use the following command.
+For example, to enter the `pnpm` environment, you can use the following command.
 
 ```bash
-nix develop ~/.dotfiles/nixos/environments/typescript
+nix develop ~/dotfiles/environments/pnpm
 ```
 
 Or, you can use the following helper command instead for the pre-defined environments.\
-`<environment>` is the name of one of the following: [latex, rust, typescript, typst].
+`<environment>` is the name of one of the following: [c_cpp, java, latex, nix, pnpm, prisma, python, rust, typst].
 
 ```bash
 develop <environment>
@@ -76,7 +76,7 @@ You can also use [`nix-direnv`](https://github.com/nix-community/nix-direnv).
 This will automatically load the environment when you `cd` into the directory.
 Also, it uses the same shell that you are using in your terminal.
 
-If you use the configuration from the [`pure`](https://github.com/gabdumal/flakes/blob/main/pure/flake.nix) flake in the Gabdumal's NixOS repository, the `nix-direnv` will be already installed via `home-manager`.
+If you use the configuration from the [`pure`](https://github.com/gabdumal/nixos/blob/main/common/flake.nix) flake in the Gabdumal's NixOS repository, the `nix-direnv` will be already installed via `home-manager`.
 
 For the first time you enable the environment, you have to `cd` into its folder, and run the following command:
 
@@ -92,10 +92,10 @@ If you want to use `nix-direnv` in a project, can create a `.envrc` file in the 
 use flake ./path/to/environment
 ```
 
-If you have followed the suggestions in the [README.md](https://github.com/gabdumal/flakes/blob/main/README.md#installing) file, you can use the following content, replacing `[environment]` with the correct values:
+If you have followed the suggestions in the [README.md](https://github.com/gabdumal/nixos/blob/main/README.md#installing) file, you can use the following content, replacing `[environment]` with the correct values:
 
 ```bash
-use flake ~/.dotfiles/nixos/environments/[environment]
+use flake ~/dotfiles/environments/[environment]
 ```
 
 Then, enable the environment by running, the following command in the root of the project:
